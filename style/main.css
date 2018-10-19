@@ -19,12 +19,44 @@ nav a, button{
 }
 
 /* Remueve el margin-bottom y bordes redondeados predeterminados de la barra Nav */
-.navbar {
+/* .navbar {
     padding:10px;
     margin-bottom: 0;
     border-radius: 0;
+} */
+
+nav{
+    width: 100%;
+    height: 64px;
+    background-color: black;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background: black;
 }
   
+nav>.nav-izq>li{
+    float: left;
+}
+
+nav>.nav-der>li{
+    float: right;
+}
+
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+}
+
+li a:hover{
+    background-color:rgb(43, 43, 43)
+}
 
 /* Añade un background-color gris y un poco de relleno (padding) al footer */
 footer {
