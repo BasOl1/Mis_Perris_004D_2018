@@ -1,15 +1,15 @@
 function validar()
 {
-    var correo, rut,nombre,fecha,celular,tipovivienda;
-    name = document.getElementById("name").value;
-    run = document.getElementById("run").value;
-    date = document.getElementById("date").value;
-    phono = document.getElementById("phono").value;
-    region = document.getElementById("region").value;
-    comuna = document.getElementsByClassName("container-comuna").value;
-    tipovivienda = document.getElementById("Tipovivienda").value;
+    //var mail = document.getElementById("email");
+    var name = document.getElementById("name").value;
+    var run = document.getElementById("txtRut").value;
+    var date = document.getElementById("date").value;
+    var phono = document.getElementById("phono").value;
+    // region = document.getElementById("region").value;
+    // comuna = document.getElementsByClassName("container-comuna").value;
+    var tipovivienda = document.getElementById("Tipovivienda").value;
 
-    if(name === "" || run === "" || date === "" ||phono === "" || tipovivienda === "")
+    if(name == "" || run == "" || date == "" ||phono == "" || tipovivienda == "")
     {
         alert("Todos los campos son obligatorios");
     }
