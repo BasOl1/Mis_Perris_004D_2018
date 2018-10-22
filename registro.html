@@ -26,15 +26,15 @@
         </ul>
     </nav>
 
-    <form action="registrar" method="post" class="form-register" onsubmit="return validar();">
+    <form action="registrar" method="post" class="form-register" onSubmit="validar()">
         <h2>Registro</h2>
         <label for="email"> Correo Electronico </label>
         <input type="email" name="email" id="Emails"
-          placeholder="Escriba su correo aqui" required autocomplete="email" max="50" required>
+          placeholder="Escriba su correo aqui" required autocomplete="email" maxlength="100" required>
     
-        <label for="txtrut">Rut</label>
-        <input type="text" name="txtrut" id="run"
-         placeholder="Escribir su Rut" required autocomplete="name" maxlenght="9" required >
+        <label for="txtRut">Rut</label>
+        <input id="txtRut" type="text"
+            onkeyup="modificarTexto()" maxlength="10" placeholder="Ingrese Rut" required />
     
         <label for="name">Nombre Completo</label>
         <input type="text" name="name" id="nombre"
@@ -45,102 +45,204 @@
     
         <label for="phono">Teléfono Celular</label>
         <input type="tel" name="phono" id="phono"
-        placeholder=" 34223434" required autocomplete="tel" maxlength="8" onkeypress="return Solonumeros(event)" required>
+        placeholder=" 11223344" required autocomplete="tel" maxlength="8" onkeypress="return Solonumeros(event)" required>
     
-        <label for="region">Región</label>
-        <input type="text" name="region" id="region" list="chocType" placeholder="eliga region" required>
-        <datalist id="region">
-        <option value="Region de Arica y parinacota">
-        <option value="Region de Tarapaca">
-        <option value="Region de Antofagasta">
-        <option value="Region de Atacama">
-        <option value="Region de Valparaiso">
-        <option value="Region Metropolitana">
-        <option value="Region Libertador Bernardo O'higgins">
-        <option value="Region del Maule">
-        <option value="Region del Bio Bio">
-        <option value="Region de la Araucania">
-        <option value="Region de Ñuble ">
-        <option value="Region de los Rios">
-        <option value="Region de los Lagos">
-        <option value="Region de Aysen">
-        <option value="Region de Magallanes">
-        </datalist>
-    
+        <br /><label for="region">Región</label><br />
+        <select id="region" required>
+            <option value="0">--------------------------------------------------</option>
+            <option value="Arica">Region de Arica y parinacota</option>
+            <option value="Tarapaca">Region de Tarapaca</option>
+            <option value="Antofagasta">Region de Antofagasta</option>
+            <option value="Atacama">Region de Atacama</option>
+            <option value="Valparaiso">Region de Valparaiso</option>
+            <option value="Metropolitana">Region Metropolitana</option>
+            <option value="BernardoO'higgins">Region Libertador Bernardo O'higgins</option>
+            <option value="Maule">Region del Maule</option>
+            <option value="BioBio">Region del Bio Bio</option>
+            <option value="Araucania">Region de la Araucania</option>
+            <option value="Ñuble">Region de Ñuble</option>
+            <option value="Rios">Region de los Rios</option>
+            <option value="Lagos">Region de los Lagos</option>
+            <option value="Aysen">Region de Aysen</option>
+            <option value="Magallanes">Region de Magallanes</option>
+        </select>
+        
+        <br /> 
         <label for="comuna">Comuna</label>
-        <input type="text" name="comuna" id="comuna" list="chocType" placeholder="ingrese comuna" required>
-        <datalist id="comuna">
-        <option value="Maipú">
-        <option value="Las Condes">
-        <option value="Estacion Central">
-        <option value="Peñalolen ">
-        <option value="Lo Barnechea">
-        <option value="Quinta Normal">
-        <option value="La Pintana">
-        <option value="Vitacura">
-        <option value="Providencia">
-        </datalist>
+        <div class="container-comuna">
+            <p id="Region1" style="display: none;">
+                <select required>
+                    <option>Arica</option>
+                    <option>Camarones</option>
+                    <option>Putre</option>
+                    <option>General Lagos</option>
+                </select>
+            </p>
+            <p id="Region2" style="display: none;">
+                <select required>
+                    <option>Iquique</option>
+                    <option>Alto Hospicio</option>
+                    <option>Camiña</option>
+                    <option>Colchane</option>
+                    <option>Huara</option>
+                    <option>Pica</option>
+                    <option>Pozo Almonte</option>                    
+                </select>
+            </p>
+            <p id="Region3" style="display: none;">
+                <select required>
+                    <option>Antofagasta</option>
+                    <option>Calama</option>
+                    <option>Tocopilla</option>
+                </select>
+            </p>
+            <p id="Region4" style="display: none;">
+                <select required>
+                    <option>Copiapó</option>
+                    <option>Vallenar</option>
+                    <option>Diego de Almagro</option>
+                </select>
+            </p>
+            <p id="Region5" style="display: none;">
+                <select required> 
+                    <option>Valparaiso</option>                
+                    <option>Concón</option>                
+                    <option>Casablanca</option>                
+                    <option>Viña del Mar</option>
+                </select>
+            </p>
+            <p id="Region6" style="display: none;">
+                <select required>
+                    <option value="">---------</option>
+                    <option>Maipú</option>
+                    <option>Las Condes</option>
+                    <option>Estación Central</option>
+                    <option>Peñalolen</option>
+                    <option>Lo Barnechea</option>
+                    <option>Quinta Normal</option>
+                    <option>La Pintana</option>
+                    <option>Vitacura</option>
+                    <option>Providencia</option>
+                </select>
+            </p>
+            <p id="Region7" style="display: none;">
+                <select required>
+                    <option>Rancagua</option>                
+                    <option>Machalí</option>                
+                    <option>Codegua</option>                
+                    <option>Mostazal</option>                
+                    <option>Graneros</option>                
+                </select>
+            </p>
+            <p id="Region8" style="display: none;">
+                <select required >
+                    <option>Talca</option>                
+                    <option>Constitución</option>                
+                    <option>Maule</option>                
+                    <option>Curicó</option>                
+                </select>
+            </p>
+            <p id="Region9" style="display: none;">
+                <select required>
+                    <option>Talcahuano</option>                
+                    <option>Lota</option>                
+                    <option>Florida</option>                
+                    <option>Concepción</option>                
+                </select>
+            </p>
+            <p id="Region10" style="display: none;">
+                <select required>
+                    <option>Temuco</option>                
+                    <option>Pucón</option>                
+                    <option>Angol</option>                
+                    <option>Curarrehue</option>                
+
+                </select>
+            </p>
+            <p id="Region11" style="display: none;">
+                <select required>
+                    <option>Chillán</option>                
+                    <option>El Carmen</option>                
+                    <option>Pemuco</option>                
+                    <option>Yungay</option>                
+
+                </select>
+            </p>
+            <p id="Region12" style="display: none;">
+                <select required>
+                    <option>Valdivia</option>                
+                    <option>Corral</option>                
+                    <option>Los Lagos</option>                
+                    <option>Panguipulli</option>                
+                </select>
+            </p>
+            <p id="Region13" style="display: none;">
+                <select required>
+                    <option>Puerto Montt</option>                
+                    <option>Frutillar</option>                
+                    <option>Llanquihue</option>                
+                    <option>Puerto Varas</option>                
+                </select>
+            </p>
+            <p id="Region14" style="display: none;">
+                <select required>
+                    <option>Coyhaique</option>
+                    <option>Aysén</option>
+                    <option>O'Higgins</option>
+                    <option>Chile Chico</option>
+                </select>
+            </p>
+            <p id="Region15" style="display: none;">
+                <select required>
+                    <option>Laguna Blanca</option>
+                    <option>Punta Arenas</option>
+                    <option>Antártica</option>
+                    <option>Torres del Paine</option>
+                </select>
+            </p>
+        </div>
+        
+
+        <label for="Tipovivienda">Tipo de vivienda</label><br />
+        <select id="Tipovivienda">
+            <option>Casa con patio Grande</option>
+            <option>Casa con patio Pequeño</option>
+            <option>Casa sin patio</option>
+            <option>Departamento</option>
+        </select>
+        <br />
+        
+        <br/><input type="submit" value="ENVIAR" id="boton">
+    </form>
     
-        <label for="Tipovivienda">Tipo de vivienda</label>
-        <input type="text" name="tipovivienda" id="tipovivienda" list="chocType" placeholder="Coloque su tipo de vivienda" required>
-        <datalist id="chocType">
-        <option value="Casa con patio Grande">
-        <option value="Casa con patio Pequeño">
-        <option value="Casa sin patio">
-        <option value="Departamento">
-        </datalist>
-        <input type="submit" value="ENVIAR" id="boton">
-        </form>
-    
-        <script>
-                function Solonumeros(e)
-                {
-                    key=e.keyCode || e.which;
-                    teclado=String.fromCharCode(key);
-                    numero="0123456789";
-                    especiales="8-37-38-46";
-                    teclado_especial=false;
-      
-                    for(var i in especiales)
-                    {
-                        if(key==especiales[i])
-                        {
-                            teclado_especial=true
-                        }
-                    }
-      
-                    if(numero.indexOf(teclado)==-1 && !teclado_especial)
-                    {
-                        return false;
-                    }
-                }
-              </script>
+    <script src="js/modal.js">
+    </script>
 
 
 
-        <footer class="container-fluid text-center">
-                <div class="div-izq"> 
-                    <p style="text-align: left;">
-                      <b>&copy;2018 Mis Perris</b></p>
-                    <p style="text-align: left;">Contacto</p>
-                    <p style="text-align: left;">
-                    <a href="mail:aimbox_prox@hotmail.cl">
-                     Correo: aimbox_prox@hotmail.cl
-                    </a>
-                  </p>
-                   <p style="text-align: left;">
-                    <a href="tel:+56979612330">
-                      Celular: +56 9 796 123 30
-                    </a>
-                  </p>
-                  
-                </div>
-                
-                <div class="contacto" style="text-align: right;">
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-google"></a>
-                </div>
-              </footer>
+    <footer class="container-fluid text-center">
+        <div class="div-izq"> 
+            <p style="text-align: left;">
+                <b>&copy;2018 Mis Perris</b></p>
+            <p style="text-align: left;">Contacto</p>
+            <p style="text-align: left;">
+            <a href="mail:aimbox_prox@hotmail.cl">
+                Correo: aimbox_prox@hotmail.cl
+            </a>
+            </p>
+            <p style="text-align: left;">
+            <a href="tel:+56979612330">
+                Celular: +56 9 796 123 30
+            </a>
+            </p>
+            
+        </div>
+        
+        <div class="contacto" style="text-align: right;">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+        </div>
+    </footer>
 </body>
 </html>
